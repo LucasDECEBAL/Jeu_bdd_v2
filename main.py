@@ -17,3 +17,14 @@
 # Enregistrer le score 
 # Demander si le joueur veut rejouer
 # Rejouer si oui sortir si non
+
+# CREATION DE L'EQUIPE
+# Creer une equipe vide
+# Afficher les personnages disponibles
+# Demander le nom du personnage
+# Verifier que le personnage existe et n'est pas deja pris
+# Charger le personnage depuis la bdd
+# Ajouter le personnage a l'equipe
+# Repeter jusqu'a avoir 3 personnages
+# Retourner l'equipe complete
+
