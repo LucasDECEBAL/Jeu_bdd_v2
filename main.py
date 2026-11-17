@@ -10,7 +10,7 @@
 # PARTIE
 #   Demander un pseudo au joueur
 #   Repeter
-#       Construire l'equipe de 3 personnages
+#       CREATION DE L'EQUIPE
 #       Lancer le combat et recuperer le score
 #       Enregistrer le score
 #       Afficher le score de la partie
@@ -25,11 +25,11 @@
 #   Repeter jusqu'a avoir 3 personnages
 #       Afficher les personnages disponibles
 #       Demander le nom du personnage
-#       Verifier que le personnage existe et n'est pas deja pris
-#       Si le nom est valide
+#       VERIFICATION DU PERSONNAGE
+#       Si la verification renvoie vrai
 #           Charger le personnage depuis la bdd
 #           Ajouter le personnage a l'equipe
-#           Afficher l'equipe courante
+#           AFFICHAGE DE L'EQUIPE
 #   Retourner l'equipe complete
 
 # AFFICHAGE DE L'EQUIPE
