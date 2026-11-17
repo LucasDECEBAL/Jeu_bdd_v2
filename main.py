@@ -1,11 +1,18 @@
+# PROGRAMME PRINCIPAL
+#   MENU
+#   Si le choix est 1
+#       PARTIE
+#   Si le choix est 2
+#       Afficher les scores
+#   Si le choix est 3
+#       Quitter
+
 # MENU
-#   Afficher 3 options (1 Jouer, 2 Scores, 3 Quitter)
-#   Lire la reponse du joueur
-#   Repeter tant que la reponse est invalide
-#       Reafficher les 3 options
-#       Relire la reponse du joueur
-#   Retourner le choix valide
-#   Lancer le processus choisi selon la reponse
+#   Repeter
+#       Afficher 3 options (1 Jouer, 2 Scores, 3 Quitter)
+#       Lire la reponse du joueur
+#       Si la reponse fait partie des options
+#           Retourner le choix valide
 
 # PARTIE
 #   Demander un pseudo au joueur
@@ -14,10 +21,7 @@
 #       Lancer le combat et recuperer le score
 #       Enregistrer le score
 #       Afficher le score de la partie
-#       Demander si le joueur veut rejouer
-#       Si oui
-#           Rejouer
-#       Si non
+#       Si le joueur ne veut pas rejouer
 #           Sortir
 
 # CREATION DE L'EQUIPE
@@ -38,9 +42,7 @@
 #       Afficher nom attaque defense et points de vie
 
 # VERIFICATION DU PERSONNAGE
-#   Verifier que le personnage n'est pas deja dans l'equipe
-#   Verifier que le personnage existe en base
-#   Si les deux conditions sont remplies
+#   Si le personnage n'est pas deja dans l'equipe et qu'il existe en base
 #       Retourner vrai
 #   Sinon
 #       Retourner faux
