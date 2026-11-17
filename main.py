@@ -1,35 +1,39 @@
-# Afficher Menu
-# Recuper un choix valide parmi les option
-# Lancer le processus choisi
-
-# Menu
-# Repeter tant que le reponse est invalide 
-# Afficher 3 options (Jouer, Quitter, Option)
-# Lire la reponse du joueur 
-# Verifier que la reponse fait partie des options 
-# Retourner le choix valide 
+# MENU
+#   Repeter tant que la reponse est invalide
+#       Afficher 3 options (1 Jouer, 2 Scores, 3 Quitter)
+#       Lire la reponse du joueur
+#       Verifier que la reponse fait partie des options
+#       Si la reponse est valide
+#           Retourner le choix valide
+#   Lancer le processus choisi selon la reponse
 
 # PARTIE
-# Demander un pseudo au joueur
-# Construire l'equipe de 3 personnages
-# Lancer le combat et recuperer le score
-# Afficher le score de la partie
-# Enregistrer le score 
-# Demander si le joueur veut rejouer
-# Rejouer si oui sortir si non
+#   Demander un pseudo au joueur
+#   Repeter
+#       Construire l'equipe de 3 personnages
+#       Lancer le combat et recuperer le score
+#       Enregistrer le score
+#       Afficher le score de la partie
+#       Demander si le joueur veut rejouer
+#       Si oui
+#           Rejouer
+#       Si non
+#           Sortir
 
 # CREATION DE L'EQUIPE
-# Creer une equipe vide
-# Repeter jusqu'a avoir 3 personnages
-# Afficher les personnages disponibles
-# Demander le nom du personnage
-# Verifier que le personnage existe et n'est pas deja pris
-# Charger le personnage depuis la bdd
-# Ajouter le personnage a l'equipe
-# Afficher l'equipe courante
-# Retourner l'equipe complete
+#   Creer une equipe vide
+#   Repeter jusqu'a avoir 3 personnages
+#       Afficher les personnages disponibles
+#       Demander le nom du personnage
+#       Verifier que le personnage existe et n'est pas deja pris
+#       Si le nom est valide
+#           Charger le personnage depuis la bdd
+#           Ajouter le personnage a l'equipe
+#           Afficher l'equipe courante
+#   Retourner l'equipe complete
 
 # AFFICHAGE DE L'EQUIPE
-# Afficher le titre
-# Parcourir les personnages
-# Afficher nom attaque defense et points de vie
+#   Afficher le titre
+#   Parcourir les personnages
+#       Afficher nom attaque defense et points de vie
+
