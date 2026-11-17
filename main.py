@@ -1,10 +1,10 @@
 # MENU
+#   Afficher 3 options (1 Jouer, 2 Scores, 3 Quitter)
+#   Lire la reponse du joueur
 #   Repeter tant que la reponse est invalide
-#       Afficher 3 options (1 Jouer, 2 Scores, 3 Quitter)
-#       Lire la reponse du joueur
-#       Verifier que la reponse fait partie des options
-#       Si la reponse est valide
-#           Retourner le choix valide
+#       Reafficher les 3 options
+#       Relire la reponse du joueur
+#   Retourner le choix valide
 #   Lancer le processus choisi selon la reponse
 
 # PARTIE
@@ -33,7 +33,14 @@
 #   Retourner l'equipe complete
 
 # AFFICHAGE DE L'EQUIPE
-#   Afficher le titre
+#   Afficher le titre "Mon equipe"
 #   Parcourir les personnages
 #       Afficher nom attaque defense et points de vie
 
+# VERIFICATION DU PERSONNAGE
+#   Verifier que le personnage n'est pas deja dans l'equipe
+#   Verifier que le personnage existe en base
+#   Si les deux conditions sont remplies
+#       Retourner vrai
+#   Sinon
+#       Retourner faux
