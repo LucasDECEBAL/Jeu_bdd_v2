@@ -20,11 +20,16 @@
 
 # CREATION DE L'EQUIPE
 # Creer une equipe vide
+# Repeter jusqu'a avoir 3 personnages
 # Afficher les personnages disponibles
 # Demander le nom du personnage
 # Verifier que le personnage existe et n'est pas deja pris
 # Charger le personnage depuis la bdd
 # Ajouter le personnage a l'equipe
-# Repeter jusqu'a avoir 3 personnages
+# Afficher l'equipe courante
 # Retourner l'equipe complete
 
+# AFFICHAGE DE L'EQUIPE
+# Afficher le titre
+# Parcourir les personnages
+# Afficher nom attaque defense et points de vie
