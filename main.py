@@ -2,22 +2,20 @@
 #   MENU
 #   Si le choix est 1
 #       PARTIE
-#   Si le choix est 2
-#       Demander un pseudo au joueur
+#   Sinon si le choix est 2
+#       DEMANDER un pseudo du joueur
 #       RECUPERER LES SCORES
 #       AFFICHAGE DU CLASSEMENT
-#   Si le choix est 3
+#   Sinon
 #       Quitter
 
 # MENU
-#   Repeter
-#       Afficher 3 options (1 Jouer, 2 Classement, 3 Quitter)
-#       Demander la reponse du joueura
-#       Si la reponse fait partie des options
-#           Retourner le choix valide
+#   Afficher les 3 options numerotees
+#   DEMANDER le numero parmi (1, 2, 3)
+#   Retourner le choix
 
 # PARTIE
-#   Demander un pseudo au joueur
+#   DEMANDER un pseudo au joueur
 #   CREER L'UTILISATEUR
 #   Repeter
 #       CREATION DE L'EQUIPE
@@ -40,26 +38,28 @@
 #   Creer une equipe vide
 #   RECUPERER LES PERSONNAGES DISPONIBLES
 #   Repeter jusqu'a avoir 3 personnages
-#       DEMANDER UN PERSONNAGE VALIDE
-#       Ajouter le personnage a l'equipe
-#       AFFICHAGE DE L'EQUIPE
-#   Retourner l'equipe complete
+#       Afficher les personnages disponibles numerotes a partir de 1
+#       DEMANDER le numero parmi (1 a len)
+#       Prendre le personnage a la position numero - 1
+#       Si le personnage est deja dans l'equipe
+#           Afficher "Ce personnage est deja pris"
+#       Sinon
+#           Ajouter le personnage a l'equipe
+#           AFFICHAGE DE L'EQUIPE
+#   Retourner l'equipe
 
 # RECUPERER LES PERSONNAGES DISPONIBLES
-#   Lire tous les personnages de la collection charcters
+#   Lire tous les personnages de la collection characters
 #   Si la liste est vide
 #       Afficher un message d'erreur
 #       Quitter
 #   Sinon
 #       Retourner la liste
 
-# DEMANDER UN PERSONNAGE VALIDE
-#   Repeter
-#       Afficher les personnages disponibles
-#       Demander le nom du personnage
-#       Si le personnage n'est pas deja dans l'equipe et qu'il existe dans la liste
-#           Charger le personnage depuis la liste
-#           Retourner le personnage
+# DEMANDER
+#   Repeter jusqu'a obtenir une reponse valide
+#       Afficher le message et lire la reponse du joueur
+#   Retourner la reponse
 
 # AFFICHAGE DE L'EQUIPE
 #   Afficher le titre "Mon equipe"
@@ -68,7 +68,7 @@
 
 # RECUPERER LES SCORES
 #   Lire l'historique du joueur dans la bdd
-#   Si le joueur n'existe pas
+#   Si le joueur n'existe pasc
 #       Retourner une liste vide
 #   Si la liste contient plus de 3 scores
 #       Garder les 3 meilleurs
@@ -83,14 +83,11 @@
 #           Afficher chaque score avec son numero
 
 # REJOUER
-#   Repeter
-#       Demander au joueur s'il veut rejouer ou non
-#       Repeter tant que la reponse n'est pas Oui ou Non en lui redemandant d'ecrire une reponse correcte
-#       Lire la reponse du joueur
-#       Si la reponse est Oui
-#           Retourner vrai
-#       Sinon
-#           Retourner faux
+#   DEMANDER la reponse parmi (Oui, Non)
+#   Si la reponse est Oui
+#       Retourner vrai
+#   Sinon
+#       Retourner faux
 
 # POINT D'ENTREE
 #   Connexion a la bdd
