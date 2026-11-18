@@ -12,7 +12,7 @@
 # MENU
 #   Repeter
 #       Afficher 3 options (1 Jouer, 2 Classement, 3 Quitter)
-#       Lire la reponse du joueur
+#       Demander la reponse du joueura
 #       Si la reponse fait partie des options
 #           Retourner le choix valide
 
@@ -40,13 +40,9 @@
 #   Creer une equipe vide
 #   RECUPERER LES PERSONNAGES DISPONIBLES
 #   Repeter jusqu'a avoir 3 personnages
-#       Afficher les personnages disponibles
-#       Demander le nom du personnage
-#       VERIFICATION DU PERSONNAGE
-#       Si la verification renvoie vrai
-#           Charger le personnage depuis la liste
-#           Ajouter le personnage a l'equipe
-#           AFFICHAGE DE L'EQUIPE
+#       DEMANDER UN PERSONNAGE VALIDE
+#       Ajouter le personnage a l'equipe
+#       AFFICHAGE DE L'EQUIPE
 #   Retourner l'equipe complete
 
 # RECUPERER LES PERSONNAGES DISPONIBLES
@@ -57,11 +53,13 @@
 #   Sinon
 #       Retourner la liste
 
-# VERIFICATION DU PERSONNAGE
-#   Si le personnage n'est pas deja dans l'equipe et qu'il existe dans la liste
-#       Retourner vrai
-#   Sinon
-#       Retourner faux
+# DEMANDER UN PERSONNAGE VALIDE
+#   Repeter
+#       Afficher les personnages disponibles
+#       Demander le nom du personnage
+#       Si le personnage n'est pas deja dans l'equipe et qu'il existe dans la liste
+#           Charger le personnage depuis la liste
+#           Retourner le personnage
 
 # AFFICHAGE DE L'EQUIPE
 #   Afficher le titre "Mon equipe"
@@ -70,6 +68,8 @@
 
 # RECUPERER LES SCORES
 #   Lire l'historique du joueur dans la bdd
+#   Si le joueur n'existe pas
+#       Retourner une liste vide
 #   Si la liste contient plus de 3 scores
 #       Garder les 3 meilleurs
 #   Retourner la liste
