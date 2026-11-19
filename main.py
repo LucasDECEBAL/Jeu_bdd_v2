@@ -38,14 +38,14 @@ def partie(db):
     pseudo = demander("Ton pseudo : ")
 #   CREER L'UTILISATEUR
     creer_utilisateur(db, pseudo)
+#   CHARGER PERSONNAGES ET MONSTRES
+    personnages_disponibles, monstres = charger_personnages_et_monstres(db)
 #   Repeter
     while True:
 #       CREATION DE L'EQUIPE
-        equipe = creation_de_l_equipe(db)
-#       RECUPERER LES MONSTRES
-        monstres = recuperer_les_monstres(db)
+        equipe = creation_de_l_equipe(personnages_disponibles)
 #       Lancer le combat et recuperer le score
-        score = game.start_fight(equipe, monstres)
+        score = game.lancer_le_combat(equipe, monstres)
 #       Enregistrer le score
         db["user"].update_one({"name": pseudo}, {"$push": {"score": {"$each": [score], "$sort": -1}}})
 #       Afficher le score de la partie
@@ -87,7 +87,7 @@ def creation_de_l_equipe(personnages):
         numeros = [str(n) for n in range(1, len(personnages) + 1)]
         numero = demander("Numero du personnage : ", numeros)
 #       Prendre le personnage a la position numero - 1
-        personnage = personnages[int(numero) - 1]
+        personnage = dict(personnages[int(numero) - 1])
 #       Si le personnage est deja dans l'equipe
         if any(membre["name"] == personnage["name"] for membre in equipe):
 #           Afficher "Ce personnage est deja pris"
