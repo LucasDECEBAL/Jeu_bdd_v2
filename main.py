@@ -10,8 +10,7 @@
 #       Quitter
 
 # MENU
-#   Afficher les 3 options numerotees
-#   DEMANDER le numero parmi (1, 2, 3)
+#   DEMANDER le numero parmi (1 Jouer, 2 Classement, 3 Quitter)
 #   Retourner le choix
 
 # PARTIE
@@ -51,7 +50,7 @@
 # RECUPERER LES PERSONNAGES DISPONIBLES
 #   Lire tous les personnages de la collection characters
 #   Si la liste est vide
-#       Afficher un message d'erreur
+#       Afficher "Aucun personnage dans la bdd, lance db_init.py"
 #       Quitter
 #   Sinon
 #       Retourner la liste
@@ -59,6 +58,8 @@
 # DEMANDER
 #   Repeter jusqu'a obtenir une reponse valide
 #       Afficher le message et lire la reponse du joueur
+#       Si la reponse n'est pas valide
+#           Afficher "Reponse incorrect, recommence"
 #   Retourner la reponse
 
 # AFFICHAGE DE L'EQUIPE
