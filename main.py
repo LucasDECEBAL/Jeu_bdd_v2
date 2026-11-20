@@ -6,24 +6,26 @@ from pymongo.errors import PyMongoError
 
 # PROGRAMME PRINCIPAL
 def programme_principal(db):
-#   MENU
-    choix = menu()
-#   Si le choix est 1
-    if choix == "1":
-#       PARTIE
-        partie(db)
-#   Sinon si le choix est 2
-    elif choix == "2":
-#       DEMANDER un pseudo du joueur
-        pseudo = demander("Votre pseudo : ")
-#       RECUPERER LES SCORES
-        scores = recuperer_les_scores(db, pseudo)
-#       AFFICHAGE DU CLASSEMENT
-        affichage_du_classement(scores)
-#   Sinon
-    else:
-#       Quitter
-        return
+#   Repeter
+    while True:
+#       MENU
+        choix = menu()
+#       Si le choix est 1
+        if choix == "1":
+#           PARTIE
+            partie(db)
+#       Sinon si le choix est 2
+        elif choix == "2":
+#           DEMANDER un pseudo du joueur
+            pseudo = demander("Votre pseudo : ")
+#           RECUPERER LES SCORES
+            scores = recuperer_les_scores(db, pseudo)
+#           AFFICHAGE DU CLASSEMENT
+            affichage_du_classement(scores)
+#       Sinon
+        else:
+#           Quitter
+            return
 
 # MENU
 def menu():
@@ -40,26 +42,18 @@ def partie(db):
     creer_utilisateur(db, pseudo)
 #   CHARGER PERSONNAGES ET MONSTRES
     personnages_disponibles, monstres = charger_personnages_et_monstres(db)
-#   Repeter
-    while True:
-#       CREATION DE L'EQUIPE
-        equipe = creation_de_l_equipe(personnages_disponibles)
-#       Lancer le combat et recuperer le score
-        score = game.lancer_le_combat(equipe, monstres)
-#       Enregistrer le score
-        db["user"].update_one({"name": pseudo}, {"$push": {"score": {"$each": [score], "$sort": -1}}})
-#       Afficher le score de la partie
-        print(f"Ton score : {score}")
-#       RECUPERER LES SCORES
-        scores = recuperer_les_scores(db, pseudo)
-#       AFFICHAGE DU CLASSEMENT
-        affichage_du_classement(scores)
-#       REJOUER
-        continuer = rejouer()
-#       Si REJOUER renvoie faux
-        if not continuer:
-#           Sortir
-            break
+#   CREATION DE L'EQUIPE
+    equipe = creation_de_l_equipe(personnages_disponibles)
+#   Lancer le combat et recuperer le score
+    score = game.lancer_le_combat(equipe, monstres)
+#   Enregistrer le score
+    db["user"].update_one({"name": pseudo}, {"$push": {"score": {"$each": [score], "$sort": -1}}})
+#   Afficher le score de la partie
+    print(f"Ton score : {score}")
+#   RECUPERER LES SCORES
+    scores = recuperer_les_scores(db, pseudo)
+#   AFFICHAGE DU CLASSEMENT
+    affichage_du_classement(scores)
 
 # CREER L'UTILISATEUR
 def creer_utilisateur(db, pseudo):
@@ -178,19 +172,6 @@ def affichage_du_classement(scores):
                 for i, score in enumerate(scores, start=1):
 #           Afficher chaque score avec son numero
                         print(f"{i}- {score}")
-
-# REJOUER
-def rejouer():
-#   DEMANDER la reponse parmi (Oui, Non)
-        reponse = demander("Veux tu rejouer ? (Oui/Non)", ["Oui", "Non"]) 
-#   Si la reponse est Oui
-        if reponse == "Oui":
-#       Retourner vrai
-                return True
-#   Sinon
-        else:
-#       Retourner faux
-                return False
 
 # POINT D'ENTREE
 def point_d_entree():
